@@ -1,12 +1,16 @@
 package br.edu.unidep.apiseguranca.apiseguranca.model;
 
 import br.edu.unidep.apiseguranca.apiseguranca.enums.UnidadeMedida;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "produto")
+@Getter
+@Setter
 public class Produto {
 
     @Id
@@ -15,7 +19,7 @@ public class Produto {
     @Column(name = "produtoid")
     private Long id;
 
-    @NotNull(message = "Campo nome obrigatório")
+    @NotNull
     private String nome;
 
     @Enumerated(EnumType.STRING)
